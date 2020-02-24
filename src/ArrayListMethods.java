@@ -37,6 +37,6 @@ public class ArrayListMethods {
         return array2;
     }
     public static ArrayList<Double> getNumbers(){
-        
+
     }
 }
