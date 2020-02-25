@@ -5,8 +5,9 @@ public class ArrayListMethods {
     public static Scanner scan = new Scanner(System.in);
 
     public static void main (String[]args){
-        numberList();
-        firstAndLast();
+        System.out.println(numberList());
+        System.out.println(firstAndLast());
+        System.out.println(getNumbers());
     }
     public static ArrayList<Integer> numberList(){
 
@@ -27,16 +28,30 @@ public class ArrayListMethods {
     }
     public static ArrayList<Double> firstAndLast(){
         ArrayList<Double> array = new ArrayList<>();
-        while (scan.nextDouble()!=0){
-            array.add(scan.nextDouble());
+        while (true){
+            double value =scan.nextDouble();
+            if (value==0.0)
+                break;
+            array.add(value);
         }
         ArrayList<Double> array2=new ArrayList<>();
         array2.add((double)(array.size()));
         array2.add((array.get(0)));
-        array2.add(array.get(array.size()));
+        array2.add(array.get(array.size()-1));
         return array2;
     }
     public static ArrayList<Double> getNumbers(){
-
+        ArrayList<Double> array = new ArrayList<>();
+        while (array.size()<=3){
+            array.add(scan.nextDouble());
+        }
+            if (array.get(0)>array.get(1)&&array.get(0)>array.get(2)){
+                array.set(2,array.get(0));
+                if (array.get(0))
+            }
+            else
+                array.set(i,array.get(i+1));
+        }
+        return array;
     }
 }
