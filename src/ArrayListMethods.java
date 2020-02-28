@@ -20,7 +20,7 @@ public class ArrayListMethods {
         array.add(12);
         array.add(-1);
         System.out.println(array);
-        array.add(3, 10);
+        array.add(2, 10);
         array.set(1, 9);
         System.out.println(array);
         array.remove(4);
@@ -45,37 +45,35 @@ public class ArrayListMethods {
 
     public static ArrayList<Double> getNumbers() {
         ArrayList<Double> array = new ArrayList<>();
-        ArrayList<Double> output = new ArrayList<>();
-        output.add(0.0);
-        output.add(0.0);
-        output.add(0.0);
-
-        for (int i=0;i < 3;i++) {
+        for (int i = 0; i < 3; i++) {
             array.add(scan.nextDouble());
         }
-            if (array.get(0) > array.get(1) && array.get(0) > array.get(2)) {
-                output.set(2, array.get(0));
-                if (array.get(1) > array.get(2))
-                    output.set(1, array.get(1));
-                output.set(0, array.get(2));
-                output.set(1, array.get(2));
-                output.set(0, array.get(1));
+        return array;
+    }
+    public static ArrayList<Double> arrangeList(ArrayList<Double> numbers) {
+            numbers = getNumbers();
+            ArrayList<Double> output = getNumbers();
+
+            if (numbers.get(0) > numbers.get(1) && numbers.get(0) > numbers.get(2)) {
+                output.set(2, numbers.get(0));
+                if (numbers.get(1) > numbers.get(2))
+                output.set(1, numbers.get(1));
+                output.set(0, numbers.get(2));
+                if (numbers.get(2)>numbers.get(1))
+                output.set(0,numbers.get(1));
+                output.set(1, numbers.get(2));
             }
-            if (array.get(0) < array.get(1) && array.get(0) < array.get(2)) {
-                output.set(0, array.get(0));
-                if (array.get(1) > array.get(2))
-                    output.set(2, array.get(1));
-                    output.set(1, array.get(2));
+            if (numbers.get(0) < numbers.get(1) && numbers.get(0) < numbers.get(2)) {
+                output.set(0, numbers.get(0));
+                if (numbers.get(1) > numbers.get(2))
+                    output.set(2, numbers.get(1));
+                output.set(1, numbers.get(2));
             }
-            if (array.get(0)<array.get(1)&&array.get(0)>array.get(2)||array.get(0)>array.get(1)&&array.get(0)<array.get(2)){
-
-
+            if (numbers.get(0) < numbers.get(1) && numbers.get(0) > numbers.get(2) || numbers.get(0) > numbers.get(1) && numbers.get(0) < numbers.get(2)) {
             }
-
-
-
             return output;
         }
 
-    }
 
+
+}
