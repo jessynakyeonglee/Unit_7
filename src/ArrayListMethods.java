@@ -46,9 +46,13 @@ public class ArrayListMethods {
     public static ArrayList<Double> getNumbers() {
         ArrayList<Double> array = new ArrayList<>();
         ArrayList<Double> output = new ArrayList<>();
-        while (array.size() <= 3) {
-            array.add(scan.nextDouble());
+        output.add(0.0);
+        output.add(0.0);
+        output.add(0.0);
 
+        for (int i=0;i < 3;i++) {
+            array.add(scan.nextDouble());
+        }
             if (array.get(0) > array.get(1) && array.get(0) > array.get(2)) {
                 output.set(2, array.get(0));
                 if (array.get(1) > array.get(2))
@@ -68,7 +72,6 @@ public class ArrayListMethods {
 
             }
 
-        }
 
 
             return output;
