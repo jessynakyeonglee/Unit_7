@@ -5,9 +5,9 @@ public class ArrayListMethods {
     public static Scanner scan = new Scanner(System.in);
 
     public static void main(String[] args) {
-        System.out.println(numberList());
-        System.out.println(firstAndLast());
-        System.out.println(getNumbers());
+       // System.out.println(numberList());
+        //System.out.println(firstAndLast());
+        System.out.println(arrangeList(getNumbers()));
     }
 
     public static ArrayList<Integer> numberList() {
@@ -51,27 +51,35 @@ public class ArrayListMethods {
         return array;
     }
     public static ArrayList<Double> arrangeList(ArrayList<Double> numbers) {
-            numbers = getNumbers();
-            ArrayList<Double> output = getNumbers();
-
+            ArrayList<Double> output = new ArrayList<>();
+            double biggest = 0;
+            double middle = 0;
+            double smallest = 0;
             if (numbers.get(0) > numbers.get(1) && numbers.get(0) > numbers.get(2)) {
-                output.set(2, numbers.get(0));
-                if (numbers.get(1) > numbers.get(2))
-                output.set(1, numbers.get(1));
-                output.set(0, numbers.get(2));
-                if (numbers.get(2)>numbers.get(1))
-                output.set(0,numbers.get(1));
-                output.set(1, numbers.get(2));
+                biggest = numbers.get(0);
+                numbers.remove(0);
             }
-            if (numbers.get(0) < numbers.get(1) && numbers.get(0) < numbers.get(2)) {
-                output.set(0, numbers.get(0));
-                if (numbers.get(1) > numbers.get(2))
-                    output.set(2, numbers.get(1));
-                output.set(1, numbers.get(2));
-            }
-            if (numbers.get(0) < numbers.get(1) && numbers.get(0) > numbers.get(2) || numbers.get(0) > numbers.get(1) && numbers.get(0) < numbers.get(2)) {
-            }
-            return output;
+
+            if (numbers.get(1) > numbers.get(0) && numbers.get(1) > numbers.get(2)) {
+            biggest = numbers.get(1);
+            numbers.remove(1);
+        }
+            if (numbers.get(2) > numbers.get(0) && numbers.get(2) > numbers.get(1)) {
+             biggest = numbers.get(2);
+            numbers.remove(2);
+        }
+        if (numbers.get(0)>numbers.get(1)){
+             smallest = numbers.get(1);
+             middle = numbers.get(0);
+        }
+        if (numbers.get(1)>numbers.get(0)){
+             smallest = numbers.get(0);
+             middle = numbers.get(1);
+        }
+        output.add(0,smallest);
+        output.add(1,middle);
+        output.add(2,biggest);
+        return output;
         }
 
 
