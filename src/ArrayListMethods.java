@@ -51,37 +51,35 @@ public class ArrayListMethods {
         return array;
     }
     public static ArrayList<Double> arrangeList(ArrayList<Double> numbers) {
-            ArrayList<Double> output = new ArrayList<>();
-            double biggest = 0;
-            double middle = 0;
-            double smallest = 0;
-            if (numbers.get(0) > numbers.get(1) && numbers.get(0) > numbers.get(2)) {
-                biggest = numbers.get(0);
-                numbers.remove(0);
-            }
-
-            if (numbers.get(1) > numbers.get(0) && numbers.get(1) > numbers.get(2)) {
+        ArrayList<Double> output = new ArrayList<>();
+        double biggest = 0;
+        double middle = 0;
+        double smallest = 0;
+        if (numbers.get(0) > numbers.get(1) && numbers.get(0) > numbers.get(2)) {
+            biggest = numbers.get(0);
+            numbers.remove(0);
+        } else if (numbers.get(1) > numbers.get(0) && numbers.get(1) > numbers.get(2)) {
             biggest = numbers.get(1);
             numbers.remove(1);
-        }
-            if (numbers.get(2) > numbers.get(0) && numbers.get(2) > numbers.get(1)) {
-             biggest = numbers.get(2);
+        } else {
+            biggest = numbers.get(2);
             numbers.remove(2);
         }
-        if (numbers.get(0)>numbers.get(1)){
-             smallest = numbers.get(1);
-             middle = numbers.get(0);
-        }
-        if (numbers.get(1)>numbers.get(0)){
-             smallest = numbers.get(0);
-             middle = numbers.get(1);
-        }
-        output.add(0,smallest);
-        output.add(1,middle);
-        output.add(2,biggest);
-        return output;
+        if (numbers.get(1) > numbers.get(0)){
+            smallest = numbers.get(0);
+        middle = numbers.get(1);
+    }
+        else {
+            smallest = numbers.get(1);
+            middle = numbers.get(0);
         }
 
+                output.add(smallest);
+                output.add(middle);
+                output.add(biggest);
+
+        return output;
+        }
 
 
 }

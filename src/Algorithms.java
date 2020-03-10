@@ -34,8 +34,9 @@ public class Algorithms {
         int end = 0;
         int count =0;
         while (count<testword.length()){
-            end = testword.indexOf(blank)
+            end = testword.indexOf(blank);
 
         }
+        return namelist;
     }
 }
