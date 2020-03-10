@@ -8,7 +8,8 @@ public class Algorithms {
         ArrayList <Integer> fileone = new ArrayList<Integer>();
         Scanner file1 = new Scanner (new File("file1.txt"));
         while(file1.hasNext()){
-            fileone.add(fileone.nextInt());
+
         }
+        return fileone;
     }
 }

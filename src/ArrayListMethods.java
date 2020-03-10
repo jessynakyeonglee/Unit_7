@@ -5,8 +5,8 @@ public class ArrayListMethods {
     public static Scanner scan = new Scanner(System.in);
 
     public static void main(String[] args) {
-       // System.out.println(numberList());
-        //System.out.println(firstAndLast());
+        System.out.println(numberList());
+        System.out.println(firstAndLast());
         System.out.println(arrangeList(getNumbers()));
     }
 
